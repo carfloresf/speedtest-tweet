@@ -8,7 +8,6 @@ import (
 	"github.com/kylegrantlucas/speedtest"
 	log "github.com/sirupsen/logrus"
 
-
 	"github.com/hellerox/speedtest-tweet/config"
 )
 
@@ -34,9 +33,10 @@ func main() {
 	}
 
 	log.Printf("initiating testing...")
+
 	dmbps, err := client.Download(server)
 	if err != nil {
-		log.Fatalln("error getting download: %v", err)
+		log.Fatalf("error getting download: %v", err)
 	}
 
 	log.Println("got result", dmbps)
@@ -60,5 +60,4 @@ func main() {
 			log.Fatalf("error while sending tweet: %s", err.Error())
 		}
 	}
-
 }

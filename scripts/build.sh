@@ -1,12 +1,27 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 set -o errexit
 set -o nounset
 
-if [ -z "${BIN}" ]; then
-    echo "BIN must be set"
+if [ -z "${APPNAME}" ]; then
+    echo "APPNAME must be set"
     exit 1
 fi
 
-go build -o build/${BIN} main.go
-echo "Successfully built"
+if [ -z "${GOARCH}" ]; then
+    echo "Using default GOARCH"
+else
+    echo "Using GOARCH=${GOARCH}"
+fi
+
+if [ -z "${GOOS}" ]; then
+    echo "Using default GOOS"
+else
+    echo "Using GOOS=${GOOS}"
+fi
+
+export CGO_ENABLED=0
+
+echo "Go building app"
+go build -v -o build/${APPNAME} cmd/${APPNAME}/main.go
+echo "Successfully built, exiting build script"

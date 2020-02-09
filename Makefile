@@ -1,31 +1,20 @@
-ENV ?= DEV
+APPNAME := speedtest-tweet
+VERSION := 1.0
 
+# Information needed for test and linting reports generation
 export REPORTS_DIR=./reports
-# The binary to build (just the basename).
-BIN := bulk-import
 
-BASEIMAGE ?= alpine
+.DEFAULT_GOAL := build
 
-PWD ?= $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
-
-build: build/$(BIN)
-
-build/$(BIN): build-dirs
-	PKG=$(PKG)          \
-	BIN=$(BIN)          \
-	./scripts/build.sh
+.PHONY: build
+build:
+	mkdir -p build
+	GOOS=$(GOOS) GOARCH=$(GOARCH) APPNAME=$(APPNAME) ./scripts/build.sh
 
 lint:
 	./scripts/lint.sh
 
 test:
 	./scripts/test.sh
-
-build-dirs:
-	@mkdir -p build/
-	@mkdir -p .go/src/$(PKG) .go/pkg .go/bin .go/std/
-
-build: build-dirs
-	@go build -o build/$(BIN) main.go
 
 
