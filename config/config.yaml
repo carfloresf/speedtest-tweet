@@ -1,0 +1,8 @@
+twitterConfig:
+  accessToken: xxxx
+  accessSecret: xxxx
+  consumerKey: xxxx
+  consumerSecret: xxxx
+threshold: 75
+expectedDownload: 100
+atTwitter: axtel
