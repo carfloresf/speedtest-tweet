@@ -8,5 +8,5 @@ require (
 	github.com/dghubble/oauth1 v0.7.0
 	github.com/kylegrantlucas/speedtest v0.0.0-20180419014002-f8512f58e7ea
 	github.com/sirupsen/logrus v1.4.2
-	github.com/spf13/viper v1.6.2
+	github.com/spf13/viper v1.8.1
 )
