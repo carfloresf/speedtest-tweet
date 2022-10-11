@@ -16,7 +16,7 @@ func main() {
 		FullTimestamp: true,
 	})
 
-	log.Println("starting axtel-measurer app")
+	log.Println("starting speedtest app")
 	log.Println("loading config")
 
 	configuration := config.GetConfiguration()

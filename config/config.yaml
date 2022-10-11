@@ -4,5 +4,5 @@ twitterConfig:
   consumerKey: xxxx
   consumerSecret: xxxx
 threshold: 75
-expectedDownload: 100
-atTwitter: axtel
+expectedDownload: 500
+atTwitter: telmex
