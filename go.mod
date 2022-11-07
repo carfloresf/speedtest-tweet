@@ -3,7 +3,7 @@ module github.com/hellerox/speedtest-tweet
 go 1.19
 
 require (
-	github.com/dghubble/go-twitter v0.0.0-20220816163853-8a0df96f1e6d
+	github.com/dghubble/go-twitter v0.0.0-20221104224141-912508c3888b
 	github.com/dghubble/oauth1 v0.7.1
 	github.com/kylegrantlucas/speedtest v0.0.0-20180419014002-f8512f58e7ea
 	github.com/sirupsen/logrus v1.9.0
